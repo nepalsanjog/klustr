@@ -1,7 +1,6 @@
 from django.db import models
 from django.conf import settings
 
-
 class Note(models.Model):
     body = models.TextField(null=True, blank=True)
     updated = models.DateTimeField(auto_now=True)
