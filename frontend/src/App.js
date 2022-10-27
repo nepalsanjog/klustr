@@ -25,7 +25,7 @@ function App() {
       <Router>
         <div className="container dark">
           <div className="app">
-            
+            <p>This is a change</p>
           <Route path="/" exact component={NotesListPage}/>
           <Route path="/note/:id" component={NotePage} />
 
