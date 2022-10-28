@@ -12,26 +12,11 @@ class Note(models.Model):
 
 # Create your models here.
 
-# ELECTRONICS = "ELECTRONICS"
-# BOOKS = "BOOKS"
-# COMPUTERS = "COMPUTERS"
-#
-# CATEGORY_CHOICES = (
-#   (ELECTRONICS, ELECTRONICS),
-#   (BOOKS, BOOKS),
-#   (COMPUTERS, COMPUTERS),
-# )
-
 # class Product(models.Model):
-#     user = models.ForeignKey(
-#         settings.AUTH_USER_MODEL,
-#         on_delete=models.CASCADE,
-#         related_name="product",
-#         null=True,
-#     )
-#     Pos_gaze = models.CharField(max_length=50, choices=CATEGORY_CHOICES)
-#     Neg_gaze = models.IntegerField(default=0)
-#     Pos_control = models.IntegerField(default=0)
-#     Neg_control = models.IntegerField(default=0)
-#     Pos_object = models.IntegerField(default=0)
-#     Neg_object = models.IntegerField(default=0)
+#     Speech_Binary = models.BooleanField(default=True)
+#     Pos_gaze = models.BooleanField(default=True)
+#     Neg_gaze = models.BooleanField(default=True)
+#     Pos_control = models.BooleanField(default=True)
+#     Neg_control = models.BooleanField(default=True)
+#     Pos_object = models.BooleanField(default=True)
+#     Neg_object = models.BooleanField(default=True)

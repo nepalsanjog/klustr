@@ -97,40 +97,42 @@ def createNote(request):
 # fs = FileSystemStorage(location='tmp/')
 #
 #
-# # Serializer
+# Serializer
 # class ProductSerializer(serializers.ModelSerializer):
 #     class Meta:
 #         model = Product
 #         fields = "__all__"
 #
-# # Viewset
+# Viewset
 # class ProductViewSet(viewsets.ModelViewSet):
 #     """
 #     A simple ViewSet for viewing and editing Product.
 #     """
 #     queryset = Product.objects.all()
 #     serializer_class = ProductSerializer
-#
+
 #     @action(detail=False, methods=['POST'])
 #     def upload_data(self, request):
 #         """Upload data from CSV"""
 #         file = request.FILES["file"]
-#
+
 #         content = file.read()  # these are bytes
 #         file_content = ContentFile(content)
 #         file_name = fs.save(
 #             "_tmp.csv", file_content
 #         )
 #         tmp_file = fs.path(file_name)
-#
+
 #         csv_file = open(tmp_file, errors="ignore")
 #         reader = csv.reader(csv_file)
+#         #first rows are categories, skip first row 
 #         next(reader)
-#         
+        
 #         product_list = []
+#         #list of objects from models.py
 #         for id_, row in enumerate(reader):
 #             (
-#                 user,
+#                 Speech_Binary,
 #                 Pos_gaze,
 #                 Neg_gaze,
 #                 Pos_control,
@@ -140,7 +142,7 @@ def createNote(request):
 #             ) = row
 #             product_list.append(
 #                 Product(
-#                     user_id=user,
+#                     Speech_Binary=Speech_Binary,
 #                     Pos_gaze=Pos_gaze,
 #                     Neg_gaze=Neg_gaze,
 #                     Pos_control=Pos_control,
@@ -149,7 +151,7 @@ def createNote(request):
 #                     Neg_object=Neg_object,
 #                 )
 #             )
-#
+
 #         Product.objects.bulk_create(product_list)
-#
+
 #         return Response("Successfully upload the data")
